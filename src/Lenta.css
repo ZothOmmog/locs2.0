@@ -1,0 +1,34 @@
+.Lenta {
+	height: 50%;
+	width: 800px;
+	background-color: white;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 5fr;
+	grid-template-areas: "hd" "lnt";
+	grid-row-gap: 10px;
+
+	justify-items: center;
+	align-items: center;
+}
+
+.head {
+	grid-area: hd;
+}
+
+.overflow-x {
+	overflow-x: auto;
+	grid-area: lnt;
+	height: 100%;
+	width: 100%;
+
+}
+
+.ivent {
+	height: 100px;
+	width: 400px;
+	background-color: gray;
+	text-align: center;
+	margin: 10px auto;
+}

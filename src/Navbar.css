@@ -1,0 +1,60 @@
+.Navbar {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 7fr 1fr 1fr 1fr 4fr 3fr;
+	grid-template-rows: 50px;
+	grid-template-areas: ". btn1 btn2 btn3 . search";
+
+	justify-items: center;
+	align-items: center;
+
+	background-color: #333;
+}
+
+.button {
+	background-color: black;
+	color: white;
+
+	padding: 5px;
+	border-radius: 10px;
+}
+
+.button:hover {
+	background-color: white;
+	color: black;
+	cursor: pointer;
+}
+
+.nav1 {
+	grid-area: btn1;
+}
+
+.nav2 {
+	grid-area: btn2;
+}
+
+.nav3 {
+	grid-area: btn3;
+}
+
+.nav4 {
+	grid-area: search;
+}
+
+.search {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 50px;
+	grid-template-areas: "input btn";
+
+	justify-items: center;
+	align-items: center;
+}
+
+.search > input {
+	grid-area: input;
+}
+
+.search > .button {
+	grid-area: btn;
+}
