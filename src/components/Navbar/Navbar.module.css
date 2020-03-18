@@ -15,7 +15,10 @@
 
 .button {
 	background-color: black;
+	
 	color: white;
+	text-decoration: none;
+	border: none;
 
 	padding: 5px;
 	border-radius: 10px;
