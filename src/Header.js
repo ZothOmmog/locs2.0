@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from "./logo.svg";
-import "./Header.css";
+import s from "./Header.module.css";
 
 function Header() {
 	return (
-		<div className="Header">
+		<div className={s.Header}>
 			
 		</div>
 	);

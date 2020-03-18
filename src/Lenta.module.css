@@ -17,7 +17,7 @@
 	grid-area: hd;
 }
 
-.overflow-x {
+.overflowX {
 	overflow-x: auto;
 	grid-area: lnt;
 	height: 100%;

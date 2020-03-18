@@ -9,14 +9,14 @@
   justify-items: center;
 }
 
-Header {
+.hdr {
   grid-area: hdr;
 }
 
-Navbar {
+.nav {
   grid-area: nav;
 }
 
-Lenta {
+.lnt {
   grid-area: lnt;
 }

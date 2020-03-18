@@ -1,13 +1,13 @@
 import React from 'react';
-import "./Navbar.css";
+import s from  "./Navbar.module.css";
 
 function Navbar() {
 	return (
-		<div className="Navbar">
-			<div className="nav1 button">btn1</div>
-			<div className="nav2 button">btn2</div>
-			<div className="nav3 button">btn3</div>
-			<div className="nav4 search">
+		<div className={s.Navbar}>
+			<div className={`${s.nav1} ${s.button}`}>btn1</div>
+			<div className={`${s.nav2} ${s.button}`}>btn2</div>
+			<div className={`${s.nav3} ${s.button}`}>btn3</div>
+			<div className={`${s.nav4} ${s.search}`}>
 				<input type="text" placeholder="Поиск..."/>
 				<div className="button">Найти</div>
 			</div>
