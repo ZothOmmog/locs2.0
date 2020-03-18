@@ -13,10 +13,6 @@ function Navbar() {
 			Новое событие
 			</NavLink>
 
-			<NavLink to="/Registration" className={`${s.nav3} ${s.button}`}>
-			Регистрация
-			</NavLink>
-
 			<div className={`${s.nav4} ${s.search}`}>
 				<input type="text" placeholder="Поиск..." />
 				<div className={s.button}>Найти</div>

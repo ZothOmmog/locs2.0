@@ -1,8 +1,8 @@
 .Lenta {
 	grid-area: cnt;
 
-	height: 400px;
-	width: 800px;
+	height: 600px;
+	width: 1000px;
 	background-color: white;
 
 	display: grid;
@@ -17,6 +17,7 @@
 
 .head {
 	grid-area: hd;
+	font-size: 2.5em;
 }
 
 .overflowX {
@@ -26,10 +27,3 @@
 	width: 100%;
 }
 
-.ivent {
-	height: 100px;
-	width: 400px;
-	background-color: gray;
-	text-align: center;
-	margin: 10px auto;
-}
