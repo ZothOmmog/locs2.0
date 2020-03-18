@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from "./Navbar.js";
-import Header from "./Header.js";
-import Lenta from "./Lenta.js";
+import Navbar from "./components/Navbar/Navbar.js";
+import Header from "./components/Header/Header.js";
+import Lenta from "./components/Lenta/Lenta.js";
 import s from  './App.module.css';
 
 function App() {
