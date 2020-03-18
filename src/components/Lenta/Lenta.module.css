@@ -1,5 +1,7 @@
 .Lenta {
-	height: 50%;
+	grid-area: cnt;
+
+	height: 400px;
 	width: 800px;
 	background-color: white;
 
@@ -9,8 +11,8 @@
 	grid-template-areas: "hd" "lnt";
 	grid-row-gap: 10px;
 
-	justify-items: center;
 	align-items: center;
+	justify-items: center;
 }
 
 .head {
@@ -22,7 +24,6 @@
 	grid-area: lnt;
 	height: 100%;
 	width: 100%;
-
 }
 
 .ivent {
