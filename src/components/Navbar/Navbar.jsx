@@ -1,23 +1,20 @@
 import React from 'react';
+import "../StyleButton/Button.css";
 import s from "./Navbar.module.css";
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 	return (
 		<div className={s.Navbar}>
-			<NavLink to="/Lenta" className={`${s.nav1} ${s.button}`}>
-			Лента событий			
-			</NavLink>
+			<div className={s.events}>
+				<NavLink to="/Lenta" className="button">
+					Лента Мероприятий
+				</NavLink>
 
-			<NavLink to="/AddIvent" className={`${s.nav2} ${s.button}`}>
-			Новое событие
-			</NavLink>
-
-			<div className={`${s.nav4} ${s.search}`}>
-				<input type="text" placeholder="Поиск..." />
-				<div className={s.button}>Найти</div>
+				<NavLink to="/AddIvent" className="button">
+					Новое Мероприятие
+				</NavLink>
 			</div>
-
 		</div>
 	);
 }
