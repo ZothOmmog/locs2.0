@@ -1,10 +1,10 @@
 import React from 'react';
-import "../StyleButton/Button.css";
+import "../CommonStyles/Button/Button.css";
 import s from "./Search.module.css";
 import Tag from "./Tag/tag.jsx"
 
 const Search = (props) => {
-    const tags = props.state.stateTags.map( tag => {
+    const tags = props.state.getTags().map( tag => {
         return <Tag state={tag}/>
     });
 
