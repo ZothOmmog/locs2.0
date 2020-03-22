@@ -13,9 +13,9 @@ function App(props) {
       <div className={s.App}>
         <Header />
         <Navbar />
-        <Search state={props.state.search} dispatch={props.dispatch} />
-        <Route path="/Lenta" render={ () => <Lenta state={props.state.lenta} dispatch={props.dispatch} /> } />
-        <Route path="/AddIvent" render={ () => <AddEvent  state={props.state.addEvent} dispatch={props.dispatch} /> } />
+        <Search state={props.state.searchPage} dispatch={props.dispatch} />
+        <Route path="/Lenta" render={ () => <Lenta state={props.state.lentaPage} dispatch={props.dispatch} /> } />
+        <Route path="/AddIvent" render={ () => <AddEvent  state={props.state.addEventPage} dispatch={props.dispatch} /> } />
         <Route path="/Registration" render={ () => <Registration /> } />
       </div>
   );
