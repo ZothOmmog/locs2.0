@@ -1,10 +1,14 @@
 import React from 'react';
 import s from './AddEvent.module.css';
+import {changeNameNewEventActionCreator} from '../../redux/state.js';
 
 const AddEvent = (props) => {
     const NameNewEventElement = React.createRef();
+
     const onNameNewEventChange = () => {
-        props.state.changeCurrentName(NameNewEventElement.current.value);
+        const newName = NameNewEventElement.current.value;
+        const changeNameNewEvent = changeNameNewEventActionCreator(newName);
+        props.dispatch(changeNameNewEvent);
     }
 
     return (
@@ -13,7 +17,7 @@ const AddEvent = (props) => {
                 type="text"
                 placeholder="Название мероприятия"
                 ref={NameNewEventElement}
-                value={props.state.currentName}
+                value={props.state.nameNewEvent}
                 onChange={onNameNewEventChange}
             />
 

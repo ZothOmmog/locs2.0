@@ -2,9 +2,12 @@ import React from 'react';
 import "../CommonStyles/Button/Button.css";
 import s from "./Search.module.css";
 import Tag from "./Tag/tag.jsx"
+import {getTagsActionCreator} from '../../redux/state.js';
 
 const Search = (props) => {
-    const tags = props.state.getTags().map( tag => {
+    const getTags = getTagsActionCreator();
+    
+    const tags = props.dispatch(getTags).map( tag => {
         return <Tag state={tag}/>
     });
 

@@ -1,3 +1,7 @@
+const GET_TAGS = "GET-TAGS";
+const GET_EVENTS = "GET-EVENTS";
+const CHANGE_NAME_NEW_EVENT = "CHANGE-NAME-NEW-EVENT";
+
 const stateForEvents = () => {
 	let str = "Съешь ещё этих сладких французских булок и выпей чаю ";
 	let eventInfo = str.repeat(23);
@@ -22,55 +26,62 @@ const stateForTags = () => {
 
 let rerenderEntireTree;
 
-const getConstructorState = () => {
-	let events = stateForEvents();
-	let tags = stateForTags();
+const Store = {
+	State: {
+		_tags: stateForTags(),
+		_events: stateForEvents(),
 
-	return function () {
-		this.search = {
-			getTags() {
-				return tags.slice();
-			}
-		};
-		this.lenta = {
-			getEvents() {
-				return events.slice();
-			}
-		};
-		this.addEvent = {
-			currentName: "",
-			currentTags: "",
-			currentInfo: "",
+		search: {
+			
+		},
+		lenta: {
+			
+		},
+		addEvent: {
+			nameNewEvent: "",
+			tagNewEvent: "",
+			infoNewEvent: ""
+		}
+	},
 
-			changeCurrentName(text) {
-				this.currentName = text;
+	dispatch(action) {
+		switch (action.type) {
+			case "ADD-NEW-EVENT":
+				this.State._tags.push(action.newEvent);
 				rerenderEntireTree();
-			},
-			changeCurrentTags(text) {
-				this.currentTags = text;
+				this.State.addEvent.nameNewEvent = "";
+				this.State.addEvent.tagNewEvent = "";
+				this.State.addEvent.infoNewEvent = "";
+				break;
+			case "ADD-NEW-TAG":
+				this.State._tags.push(action.newTag);
 				rerenderEntireTree();
-			},
-			changeCurrentInfo(text) {
-				this.currentInfo = text;
+				break;
+			case "GET-TAGS":
+				return this.State._tags;
+			case "GET-EVENTS":
+				return this.State._events;
+
+			case "CHANGE-NAME-NEW-EVENT":
+				this.State.addEvent.nameNewEvent = action.name;
 				rerenderEntireTree();
-			},
-			addCurrentEvent() {
-				events.push({ name: this.currentName, type: this.currentTags, info: this.currentInfo });
-				this.currentName = "";
-				this.currentTags = "";
-				this.currentInfo = "";
-				rerenderEntireTree();
-			}
-		};
-		return this;
+				break;
+			default:
+				break;
+		}
 	}
 }
 
-const StateConstr = getConstructorState();
-const state = new StateConstr();
+window.state = Store.State;
 
 export let subscribe = (observer) => {
 	rerenderEntireTree = observer;
 }
 
-export default state;
+export const getEventsActionCreator = () => ({ type: GET_EVENTS });
+export const getTagsActionCreator = () => ({ type: GET_TAGS });
+export const changeNameNewEventActionCreator = (newName) => ({
+	type: CHANGE_NAME_NEW_EVENT, name: newName 
+});
+
+export default Store;
