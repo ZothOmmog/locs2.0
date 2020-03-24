@@ -22,7 +22,7 @@ const initialState = {
 const lentaReducer = (state = initialState, action) => {
     switch(action.type) {
         case "ADD-NEW-EVENT":
-            state.events.push(action.newEvent);
+            state.events.push(action.event);
 			return state;
 		default:
 			return state;

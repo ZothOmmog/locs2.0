@@ -1,8 +1,8 @@
 .App {
-  background-color: #e2e2e2;
+  
   display: grid;
   
-  grid-template-rows: auto auto auto auto 200px;
+  grid-template-rows: auto auto auto auto;
   grid-template-columns: 100%;
   grid-template-areas: "hdr" "nav" "search" "cnt";
   grid-row-gap: 15px;
