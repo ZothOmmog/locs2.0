@@ -10,52 +10,56 @@ const initialState = {
 }
 
 const addEventReducer = (state = initialState, action) => {
+    let cloneState = { ...state };
+
     switch (action.type) {
         case "UPDATE-NAME-NEW-EVENT":
-            state.nameNewEvent = action.name;
-            return state;
+            cloneState.nameNewEvent = action.name;
+            break;
         case "UPDATE-TAGS-NEW-EVENT":
-            state.tagNewEvent = action.tag;
-            return state;
+            cloneState.tagNewEvent = action.tag;
+            break;
         case "UPDATE-INFO-NEW-EVENT":
-            state.infoNewEvent = action.info;
-            return state;
+            cloneState.infoNewEvent = action.info;
+            break;
         case "ADD-NEW-EVENT":
-            state.nameNewEvent = "";
-            state.tagNewEvent = "";
-            state.infoNewEvent = "";
-            return state;
+            cloneState.nameNewEvent = "";
+            cloneState.tagNewEvent = "";
+            cloneState.infoNewEvent = "";
+            break;
         default:
-            return state;
+            break;
     }
+
+    return cloneState;
 }
 
 export const updateNameNewEventActionCreator = (newName) => {
-    return { 
-        type: UPDATE_NAME_NEW_EVENT, 
-        name: newName 
+    return {
+        type: UPDATE_NAME_NEW_EVENT,
+        name: newName
     };
 };
 export const updateTagsNewEventActionCreator = (newTag) => {
-    return { 
-        type: UPDATE_TAGS_NEW_EVENT, 
-        tag: newTag 
+    return {
+        type: UPDATE_TAGS_NEW_EVENT,
+        tag: newTag
     };
 };
 export const updateInfoNewEventActionCreator = (newInfo) => {
-    return { 
-        type: UPDATE_INFO_NEW_EVENT, 
-        info: newInfo 
+    return {
+        type: UPDATE_INFO_NEW_EVENT,
+        info: newInfo
     };
 };
 export const addNewEventActionCreator = (newName, newTag, newInfo) => {
-    return { 
-        type: ADD_NEW_EVENT, 
-        event: { 
-            name: newName, 
-            type: newTag, 
-            info: newInfo 
-        } 
+    return {
+        type: ADD_NEW_EVENT,
+        event: {
+            name: newName,
+            type: newTag,
+            info: newInfo
+        }
     };
 }
 

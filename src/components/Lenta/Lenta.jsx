@@ -3,7 +3,7 @@ import Event from './Event/Event.jsx';
 import s from "./Lenta.module.css";
 
 const Lenta = (props) => {
-	const events = props.state.events.map( event => {
+	const events = props.events.map( event => {
 		return <Event name={event.name} type={event.type} info={event.info} />;
 	});
 
