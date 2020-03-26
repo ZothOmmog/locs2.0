@@ -10,28 +10,23 @@ const initialState = {
 }
 
 const addEventReducer = (state = initialState, action) => {
-    let cloneState = { ...state };
-
     switch (action.type) {
         case "UPDATE-NAME-NEW-EVENT":
-            cloneState.nameNewEvent = action.name;
-            break;
+            return { ...state, nameNewEvent: action.name };
         case "UPDATE-TAGS-NEW-EVENT":
-            cloneState.tagNewEvent = action.tag;
-            break;
+            return { ...state, tagNewEvent: action.tag };
         case "UPDATE-INFO-NEW-EVENT":
-            cloneState.infoNewEvent = action.info;
-            break;
+            return { ...state, infoNewEvent: action.info };
         case "ADD-NEW-EVENT":
-            cloneState.nameNewEvent = "";
-            cloneState.tagNewEvent = "";
-            cloneState.infoNewEvent = "";
-            break;
+            return { 
+                ...state, 
+                nameNewEvent: action.name,
+                tagNewEvent: action.tag,
+                infoNewEvent: action.info
+            };
         default:
-            break;
+            return state;
     }
-
-    return cloneState;
 }
 
 export const updateNameNewEventActionCreator = (newName) => {

@@ -20,18 +20,15 @@ const initialState = {
 };
 
 const lentaReducer = (state = initialState, action) => {
-	let cloneState = {...state};
-
     switch(action.type) {
         case "ADD-NEW-EVENT":
-			cloneState.events = {...state.events};
-            cloneState.events.push(action.event);
-			break;
+			return {
+				...state,
+				events: [...state.events, action.event]
+			};
 		default:
-			break;
+			return state;
 	}
-	
-	return cloneState;
 }
 
 export default lentaReducer;

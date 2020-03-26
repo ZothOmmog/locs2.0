@@ -10,21 +10,20 @@ const initialState = {
 }
 
 const searchReducer = (state = initialState, action) => {
-    let cloneState = { ...state };
-
     switch (action.type) {
         case "ADD-NEW-TAG":
-            cloneState.tags = { ...state.tags };
-            cloneState.tags.push(action.tag);
-            break;
+            return {
+                ...state,
+                tags: [...state.tags, action.tag]
+            };
         case "UPDATE-QUERY-TEXT":
-            cloneState.inputSearch = action.queryText;
-            break;
+            return {
+                ...state,
+                inputSearch: action.queryText
+            };
         default:
-            break;
+            return state;
     }
-
-    return cloneState;
 }
 
 export const updateQueryTextActionCreator = (queryText) => {

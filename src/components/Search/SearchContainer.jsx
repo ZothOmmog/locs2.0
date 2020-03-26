@@ -5,7 +5,7 @@ import { updateQueryTextActionCreator } from '../../redux/searchReducer';
 const mapStateToProps = (state) => {
     return {
         state: state.searchPage
-    }
+   }
 }
 
 const mapDispatchToProps = (dispatch) => {
